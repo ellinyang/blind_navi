@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.navi_blind.MainActivity">
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        >
+    </com.amap.api.maps.MapView>
+
+    <RelativeLayout
+        android:id="@+id/search_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="@dimen/offset_title"
+        android:layout_marginRight="@dimen/offset_title"
+        android:layout_marginStart="@dimen/offset_title"
+        android:layout_marginTop="@dimen/offset_title"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/search_btn_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/offset_title"
+            android:background="@drawable/offlinearrow_tab2_pressed"
+            >
+
+            <TextView
+                android:id="@+id/btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:layout_centerVertical="true"
+                android:paddingEnd="12dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingStart="12dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="搜索"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                android:visibility="invisible"
+                />
+
+            <ImageView
+                android:id="@+id/search_voice_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:src="@mipmap/voice_btn"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/search_btn_layout"
+            android:layout_toStartOf="@+id/search_btn_layout"
+            android:background="@drawable/search_input_half"
+            android:clickable="true"
+            android:gravity="center_vertical" >
+
+
+            <EditText
+                android:id="@+id/input_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableLeft="@mipmap/search_input"
+                android:background="@color/transparent"
+                android:hint="请输入搜索关键字"
+                android:textColorHint="@color/darkgrey"
+                android:singleLine="true"
+                android:textColor="@color/gary"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/main_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true">
+        <include layout="@layout/view_main_bottom_layout" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/poi_detail"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/border_bg"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/poi_name"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textColor="#5566b8"
+            android:textSize="15sp"
+            android:text="地名"/>
+
+        <TextView
+            android:id="@+id/poi_address"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/poi_name"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textSize="15sp"
+            android:text="地址"/>
+
+        <Button android:id="@+id/poi_route_button"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/poi_address"
+            android:layout_centerHorizontal="true"
+            android:text="去这里"/>
+    </RelativeLayout>
+</RelativeLayout>
